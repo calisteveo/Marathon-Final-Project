@@ -3,6 +3,18 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
+gem 'dotenv', '~> 0.10.0'
+
+gem 'dotenv-rails', :groups => [:development, :test]
+
+gem 'pry-rails', :group => :development
+
+gem 'pg'
+
+gem 'handlebars_assets'
+
+gem 'sinatra', '~> 1.4.4'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
@@ -31,6 +43,8 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
