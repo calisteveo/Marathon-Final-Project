@@ -1,4 +1,9 @@
 Marathon::Application.routes.draw do
+  get "journeys/new"
+  get "journeys/create"
+  get "journeys/show"
+  get "journeys/destroy"
+  get "users/index"
   get "user/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
