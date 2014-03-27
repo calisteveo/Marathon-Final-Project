@@ -8,6 +8,14 @@
 <div id="elevation_chart"></div>
 <div id="directionsPanel"></div>
 
+<div>
+  <ul class="nav">
+    <li><a id="nbtn" href="#">New Journey</a></li>
+    <li><a id="dbtn" href="#">Clear Runs</a></li>
+    <li><a id="ebtn" href="#">Sign Out</a></li>
+  </ul>
+</div>
+
 <script>
 
   (function makeMap(callback){
@@ -17,6 +25,6 @@
     callback();
   })(calcMyRoute)
 
-  $(document).on('ready page:load', initialize_map);
+  // $(document).on('ready page:load', initialize_map);
 
   </script>

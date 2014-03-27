@@ -1,7 +1,7 @@
 Marathon::Application.routes.draw do
   resources :users, :sessions, :journeys
 
-  root to: "journeys#index"
+  root to: "sessions#new"
 
   get "/signup" => "users#new"
   delete "/signout", to: "sessions#destroy"

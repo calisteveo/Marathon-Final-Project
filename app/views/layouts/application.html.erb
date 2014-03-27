@@ -2,11 +2,24 @@
 <html>
 <head>
   <title>Marathon</title>
+  <link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
+  <script src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUvSlDO2TVSdePtRDp-Jvb35dfhZCThYs&sensor=false"></script>
+      <!-- // <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=weather"></script> -->
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 </head>
 <body>
+<!-- if user_signed_in? %>
+<element id="user_id" data-id="  %current_user.id%>"></element>
+end%> -->
+<h1 id="app_name">Marathon</h1>
+
+<p class="notice"> <%=notice %> </p>
+<p class="alert"> <%=alert %> </p>
 
 <%= yield %>
 

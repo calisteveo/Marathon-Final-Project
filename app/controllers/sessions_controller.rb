@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user=User.find_by_username(params[:session][:username].downcase)
     if user && user.authenticate(params[:session][:password])
       sign_in user
-      redirect_to '/'
+      redirect_to journeys_path
     else
       #flash error message and render sign-in form
       flash.now[:error]='Invalid username/password combination'
