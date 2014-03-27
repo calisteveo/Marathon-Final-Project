@@ -1,4 +1,8 @@
 Marathon::Application.routes.draw do
+  get "locations/new"
+  get "locations/create"
+  get "locations/show"
+  get "locations/destroy"
   get "journeys/new"
   get "journeys/create"
   get "journeys/show"
