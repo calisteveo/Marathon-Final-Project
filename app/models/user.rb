@@ -1,4 +1,19 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string(255)
+#  password        :string(255)
+#  password_conf   :string(255)
+#  remember_token  :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  password_digest :string(255)
+#
+
 class User < ActiveRecord::Base
+
 
   has_many :locations
   has_many :journeys
@@ -8,7 +23,7 @@ class User < ActiveRecord::Base
   before_save { |user| user.username = username.downcase }
   before_save :create_remember_token
 
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :username, presence: true, length: { maximum: 50 }
   validates :password, presence: true, length: { minimum: 5 }
   validates :password_confirmation, presence: true
 

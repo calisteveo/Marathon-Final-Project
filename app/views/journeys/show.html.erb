@@ -1,0 +1,22 @@
+<div id="show-route">
+  <div id="start"><%= @journey["origin"] %></div>
+  <div id="end"><%= @journey["destination"] %></div>
+</div>
+
+<div id="map-canvas"></div>
+<div id="left-side"></div>
+<div id="elevation_chart"></div>
+<div id="directionsPanel"></div>
+
+<script>
+
+  (function makeMap(callback){
+    map = new google.maps.Map(document.getElementById('map-canvas'));
+    directionsDisplay.setMap(map);
+    directionsDisplay.setPanel(document.getElementById('directionsPanel'));
+    callback();
+  })(calcMyRoute)
+
+  $(document).on('ready page:load', initialize_map);
+
+  </script>
