@@ -124,53 +124,6 @@
 
 
 
-/*----------Meets-------------*/
-
-.meets {
-  
-}
-
-/*div .meet :hover {
-  background-color:#333;
-  opacity:.9;
-}*/
-
-.meet {
-  /*background-color: #FFF;*/
-  clear:both;
-  min-width: 250px;
-  margin: 20px auto;
-  color:#fff;
-}
-
-.meet a {
-  text-decoration: none;
-}
-
-
-#newmeetbtn {
-  margin-top: 50px;
-}
-
-.ind_meet {
-  color: #fff;
-}
-
-#newmeet_link {
-  margin: auto;
-}
-
-#newmeet_link > button {
-  width: 240px;
-  height: 45px;
-  /*border-radius: 6px;*/
-  margin-bottom: 10px;
-  font-size: 20px;
-  color: #fff;
-  background-color: #000;
-  opacity:.9;
-  border: 3px solid #2ECC71;
-}
 
 .datetime{
   position:relative;
@@ -183,36 +136,6 @@
   font-size:22px;
   width:150px;
 }
-
-
-/*-----------Invites--------------*/
-
-#invites{
-  color:#fff;
-}
-
-
-.inc_invite :hover{
-  /*background-color: blue;*/
-}
-
-.out_invite :hover{
-  /*background-color:yellow;*/
-}
-
-
-
-.s_inc_inv{
-  
-}
-
-.s_out_inv{
-
-}
-
-
-/*-----------Profile--------------*/
-
 
 #profile {
   color:#fff;
@@ -253,14 +176,6 @@ input[type="submit"] {
   width: 160px;
   height: 30px;
   font-size: 15px;
-}*/
-
-
-
-@font-face
-{
-font-family: ASansReg;
-src: url(ASansreg.ttf);
 }
 
 /*--------------Element Styling-------------*/
