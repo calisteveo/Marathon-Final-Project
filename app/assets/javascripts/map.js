@@ -6,7 +6,7 @@ function initialize(){
 
   var mapOptions = {
     center: new google.maps.LatLng(37.7933, -122.3167),
-    zoom: 16
+    zoom: 12
   };
 
   map = new google.maps.Map(document.getElementById('map-canvas'),
@@ -37,5 +37,5 @@ function initialize(){
     });
   }
 }
-//$(document).on('ready page:load', initialize);
+
 
