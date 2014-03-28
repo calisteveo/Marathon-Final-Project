@@ -16,6 +16,8 @@
 //= require handlebars.runtime
 //= require_tree .
 
+// this is from the maps tutorial
+var gdir, startAddress, endAddress;
 
 $(document).on('ready page:load', function(){
 

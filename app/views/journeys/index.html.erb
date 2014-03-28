@@ -1,0 +1,27 @@
+<% @journeys.each do |journey| %>
+  <div class="row">
+     <div class="col-md-3 col-sm-3">
+      <p class="lead"><%= link_to(journey.user_id, journey) %></p>
+      <p class="text-info"><%= journey.origin %></p>
+      <p class="text-warning"><%= journey.destination %></p>
+    </div>
+  
+<% end %>
+
+<div>
+  <ul class="nav">
+    <li><%= link_to('New Run', new_journey_path) %></li>
+    <li><%= link_to('Sign Out', signout_path) %></li>
+  </ul>
+</div>
+
+
+<!-- <div class="navbar navbar-fixed-bottom">
+  <div class="navbar-inner">
+    <ul class="nav nav-inline">
+      <li>%= link_to 'New Run', "journeys#new" %></li>
+      <li>%= link_to 'Clear Runs', "journeys#destroy" %></li>
+      <li>%= link_to 'Sign Out', "sessions#destroy" %></li>
+    </ul>
+  </div>
+</div> -->

@@ -5,6 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-journeys = Journeys.create([{ name: 'GGPark', origin: 414 Brannan St, destination: Golden Gate Park}, 
-  { name: 'Edgewood', origin: 200 Embarcadero, destination: 218 Edgewood Ave }, 
-  { name: 'Beach', origin: 218 Edgewood, destination: Ocean Beach } ])
+journeys = Journey.create([{ name: 'GGPark' }, 
+  { name: 'Edgewood' }, 
+  { name: 'Beach' } ])

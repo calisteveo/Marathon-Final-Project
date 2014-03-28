@@ -1,2 +1,22 @@
-<h1>Journeys#new</h1>
-<p>Find me in app/views/journeys/new.html.erb</p>
+<div class="container">
+
+  <h1>New Run</h1>
+
+  <div class="row">
+    <div class="col-lg-12 col-lg-offset-2">
+      <%= form_for @journey do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <br>
+        <%= f.label :origin %>
+        <%= f.text_field :origin %>
+        <br>
+        <%= f.label :destination %>
+        <%= f.text_field :destination %>
+        <br>
+        <%= f.submit "Create route", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </div>
+      
+  </div>
+</div>

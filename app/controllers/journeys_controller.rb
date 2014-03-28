@@ -16,7 +16,7 @@ class JourneysController < ApplicationController
 
   def create
     new_journey = params.require(:journey).permit(:name, :origin, :orig_lat, :orig_lng, :destination, :dest_lat, :dest_lng, :user_id)
-    @journey = Journey.create(origin: new_journey["start"], destination: new_journey["end"], user_id: id)
+    @journey = Journey.create(origin: new_journey["start"], destination: new_journey["end"])
     render :show
   end
 
