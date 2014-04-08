@@ -1,4 +1,5 @@
 Marathon::Application.routes.draw do
+  get "runs/index"
   resources :users, :sessions, :journeys
 
   root to: "sessions#new"
