@@ -1,6 +1,6 @@
 Marathon::Application.routes.draw do
-  get "runs/index"
-  resources :users, :sessions, :journeys
+  get "/" => "runs#index"
+  resources :runs, :users, :sessions, :journeys
 
   root to: "sessions#new"
 
