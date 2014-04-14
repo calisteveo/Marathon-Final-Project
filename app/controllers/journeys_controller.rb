@@ -1,14 +1,4 @@
 class JourneysController < ApplicationController
-  
-  def index
-    @user=current_user
-    @journeys= @user.journeys
-
-    respond_to do |f|
-      f.html
-      f.json {render :json => @journeys.to_json(:include => { :users => { :only => :username} })}
-    end
-  end
 
   def new
     @journey=Journey.new

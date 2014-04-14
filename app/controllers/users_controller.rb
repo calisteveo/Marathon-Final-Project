@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @journey = @user.journeys
-    render :show
+    # render :show
   end
 
   def new
