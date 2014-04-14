@@ -11,7 +11,7 @@ gem 'pry-rails', :group => :development
 
 gem 'pg'
 
-gem 'twitter-bootstrap-rails', '~> 2.2.8'
+# gem 'twitter-bootstrap-rails', '~> 2.2.8'
 
 gem 'handlebars_assets'
 

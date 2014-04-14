@@ -11,7 +11,7 @@
  *= require_self
  *= require_tree .
  */
-.mapstyle { 
+/*.mapstyle { 
   height: 200px; 
   width: 200px; 
   margin:auto;
@@ -36,15 +36,15 @@
   top:0;
   width:95%;
   /*font-family: 'Varela Round', sans-serif;*/
- font-family: 'Playfair Display SC', serif;
+ /*font-family: 'Playfair Display SC', serif;
  font-weight: 200;
-  font-size: 75px;
+  font-size: 75px;*/
   /*color: #00059C;*/
-  color:#62F249;
+ /* color:#62F249;
   opacity: .9;
-}
+}*/
 
- .hidden{
+/* .hidden{
   display:none;
 }
 
@@ -84,7 +84,7 @@
     display:inline;
     /*padding:15px 0 0 0;*/
     /*background-color:black;*/
-    color:#BFED61;
+    /*color:#BFED61;
     text-decoration: none;  
 }
 
@@ -138,7 +138,7 @@ input[type="submit"] {
 
 /*--------------Element Styling-------------*/
 
-html, body{
+/*html, body{
     height:90%;
     font-family: 'ASansreg', sans-serif;
     background-color: #706373;
@@ -171,6 +171,4 @@ input {
 hr { 
   display: block; height: 0px; border:0; border-top: 2px solid #19B5FE;
 }
-
-
-
+*/
