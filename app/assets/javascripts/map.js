@@ -3,6 +3,7 @@ var directionsDisplay = new google.maps.DirectionsRenderer();
 var directionsService = new google.maps.DirectionsService();
 var elevator = new google.maps.ElevationService();
 var map;
+var service;
 
 var elevator;
 var chart;
@@ -12,9 +13,11 @@ var polyline;
 google.load('visualization', '1', {packages: ['columnchart']});
 
 function initialize(){
+
+  var san_francisco = new google.maps.LatLng(37.7933, -122.3167);
   
   var mapOptions = {
-    center: new google.maps.LatLng(37.7933, -122.3167),
+    center: san_francisco,
     zoom:12,
     mapTypeControl: true,
     mapTypeControlOptions: {
@@ -54,6 +57,15 @@ function initialize(){
   calcRoute();
 
   drawPath();
+
+  var banoRequest = {
+    location: san_francisco,
+    radius: '500',
+    types: ['restroom', 'coffee shop', 'drinking fountain']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(banoRequest, callback);
 }
 
   function calcRoute() {
@@ -197,23 +209,29 @@ function initialize(){
     navigator.geolocation.getCurrentPosition(function(position){
       var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     });
-    //   var start_marker = new google.maps.Marker({
-    //     position: pos,
-    //     map: map,
-    //     title: 'Start',
-    //     icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-    //     draggable:true
-    //   });
-
-    //   markers.push(start_marker);
-
-    //   var end_marker = new google.maps.Marker({
-    //     position: pos,
-    //     map: map,
-    //     title: 'Stop',
-    //     icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
-    //     draggable:true
-    //   });
-    //   markers.push(end_marker);
-    // });
+    
   }
+
+  function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < results.length; i++) {
+        var place = results[i];
+        createMarker(results[i]);
+      }
+    }
+  }
+
+  function createMarker(place) {
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location
+    });
+
+    google.maps.event.addListener(marker, 'click', function(){
+      infowindow.setContent(place.name);
+      infowindow.open(map, this);
+    });
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
