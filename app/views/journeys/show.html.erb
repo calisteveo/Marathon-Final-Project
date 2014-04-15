@@ -6,6 +6,13 @@
 <div id="see-route">
   <div id="my-start"><%= @journey["origin"] %></div>
   <div id="my-end"><%= @journey["destination"] %></div>
+    <% if @journey.waypoints != nil %>
+      <% @journey.waypoints.each do |waypoint| %>
+      <% @waypoints << (waypoint["way_lat"].to_f) %>
+      <% @waypoints << (waypoint["way_lng"].to_f) %>
+      <% end %>
+    <% end %>
+  <div id="waypoints"><%= @waypoints %></div>
 </div>
 
 <div id="map-canvas"></div>
