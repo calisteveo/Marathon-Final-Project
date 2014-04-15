@@ -1,5 +1,9 @@
 
-var directionsDisplay = new google.maps.DirectionsRenderer();
+var rendererOptions = {
+  draggable: true
+};
+
+var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
 var directionsService = new google.maps.DirectionsService();
 var elevator = new google.maps.ElevationService();
 var map;
@@ -45,8 +49,15 @@ function initialize(){
     $("#form_end").val($end.val());
     $("#distance").val($distance.val());
       console.Log(distance);
+    $("#waypoints").empty();
 
     var dir = directionsDisplay.getDirections();
+    // grabbing waypoints
+    dir.routes[0].legs[0].via_waypoints.forEach(function(waypoint, index){
+      // for each waypoint pass the lattitude(d) and longitude(e) to the form which is then saved.
+      $("#new_journey #waypoints").append("<input type='hidden' name='journey[waypoint]["+index+"][d]' value='"+waypoint.d+"'>");
+      $("#new_journey #waypoints").append("<input type='hidden' name='journey[waypoint]["+index+"][e]' value='"+waypoint.e+"'>");
+    });
   };
   google.maps.event.addListener(directionsDisplay, 'directions_changed', function(){
     console.log(directionsDisplay.getDirections());
