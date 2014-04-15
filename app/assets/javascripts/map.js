@@ -8,7 +8,7 @@ var directionsService = new google.maps.DirectionsService();
 var elevator = new google.maps.ElevationService();
 var map;
 var service;
-
+var geocoder;
 var elevator;
 var chart;
 var infowindow = new google.maps.InfoWindow();
@@ -39,6 +39,7 @@ function initialize(){
 
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   directionsDisplay.setMap(map);
+  directionsDisplay.setPanel(document.getElementById('directionsPanel'));
 
   var updateForm = function(){
     var $start = $("#start");
@@ -171,7 +172,7 @@ function initialize(){
         fontName: 'Open Sans',
         animation:{
           duration: 1000,
-          easing: 'linear',
+          easing: 'linear'
         }
     };
 
@@ -207,18 +208,25 @@ function initialize(){
     };
     console.log(request);
 
-    directionsService.route(request, function(response, status){
-      if (status == google.maps.DirectionsStatus.OK) {
-        directionsDisplay.setDirections(response);
-        console.log(status);
-        console.log(response);
-      }
-    });
+    // directionsService.route(request, function(response, status){
+    //   if (status == google.maps.DirectionsStatus.OK) {
+    //     directionsDisplay.setDirections(response);
+    //     console.log(status);
+    //     console.log(response);
+    //   }
+    // });
     drawPath(my_path);
   }
+  // Adding geolocation function
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(function(position){
       var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    });
+
+    var infowindow = new google.maps.InfoWindow({
+      map: map,
+      position: pos,
+      content: 'Location found using HTML5.'
     });
     
   }
