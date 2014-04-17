@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @journey = @user.journeys
+    @waypoints = []
     render :show
   end
 
@@ -16,8 +17,9 @@ class UsersController < ApplicationController
     new_user = params.require(:user).permit(:username, :password, :password_confirmation)
     @user=User.new(new_user)
     if @user.save
+      flash[:success] = "Run!"
       sign_in @user
-      redirect_to journeys_path
+      redirect_to '/'
     else
       render :new
     end

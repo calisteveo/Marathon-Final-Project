@@ -1,8 +1,9 @@
 Marathon::Application.routes.draw do
-  get "/" => "runs#index"
+  
   resources :runs, :users, :sessions, :journeys
 
-  root to: "sessions#new"
+  get "/" => redirect("/runit")
+  get "/runit" => "runs#index"
 
   get "/signup" => "users#new"
   delete "/signout", to: "sessions#destroy"
