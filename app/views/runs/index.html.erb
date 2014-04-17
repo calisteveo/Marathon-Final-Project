@@ -8,6 +8,9 @@
   <input id="submit_btn" name="commit" type="submit" onclick="calcRoute()"/>
 </div>
 
+<div id="modepanel">
+</div>
+
 <div id="save-route">
   <%= form_for :journey, url: journeys_path, method: "post", html: {id: "new_journey"} do |f| %>
 
