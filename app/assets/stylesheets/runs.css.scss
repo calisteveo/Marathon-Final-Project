@@ -85,6 +85,16 @@ body {
   padding: 5px;
 }
 
+#modepanel {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  margin-left: 150px;
+  z-index: 500;
+  background-color: #fff;
+  padding: 5px;
+}
+
 #mode {
   background-color: #fff;
   z-index: 500;
@@ -234,20 +244,30 @@ body {
 
 @media (max-width: 1000px) {
   
-#panel {
-  position: fixed;
-  left: 50%;
-  margin-left: -200px;
-  z-index: 500;
-  background-color: #fff;
-  padding: 5px;
-}
+  #panel {
+    position: fixed;
+    left: 50%;
+    margin-left: -200px;
+    z-index: 500;
+    background-color: #fff;
+    padding: 5px;
+  }
 
-.navbar-right {
-  float: right;
-  top: 0px;
-  right: 25px;
-}
+  #modepanel {
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    margin-left: 60px;
+    z-index: 500;
+    background-color: #fff;
+    padding: 5px;
+  }
+
+  .navbar-right {
+    float: right;
+    top: 0px;
+    right: 25px;
+  }
 
 }
 
@@ -261,6 +281,10 @@ body {
     z-index: 500;
     background-color: #fff;
     padding: 5px;
+  }
+
+  #modepanel {
+    visibility: hidden;
   }
 
   #start, #end {
@@ -312,6 +336,10 @@ body {
     padding: 5px;
     width: 160px;
     text-align: right;
+  }
+
+  #modepanel {
+    visibility: hidden;
   }
 
   #start, #end {
