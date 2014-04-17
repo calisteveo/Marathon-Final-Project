@@ -13,6 +13,16 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
   end
 
+  def edit
+    @location = Location.find(params[:id])
+  end
+
+  def update
+    @location = Location.find(params[:id])
+    @location.update_attributes(params[:Location])
+    render :show
+  end
+
   def destroy
     location = Location.find(params[:id])
     location.delete

@@ -61,7 +61,7 @@ function initialize(){
     });
   };
   google.maps.event.addListener(directionsDisplay, 'directions_changed', function(){
-    console.log(directionsDisplay.getDirections());
+    console.log("You changed directions", directionsDisplay.getDirections());
     updateForm();
     createLatLngList(directionsDisplay.getDirections());
   });
@@ -129,7 +129,7 @@ function initialize(){
       for (var i = 0; i < list.length; i++) {
         path.push(new google.maps.LatLng(list[i].d, list[i].e));
       }
-      console.log("This is the list:", list);
+      console.log("Here is the list:", list);
     }
 
     // Create PathElevationRequest object using this array and ask for 25 samples along path
@@ -208,13 +208,13 @@ function initialize(){
     };
     console.log(request);
 
-    // directionsService.route(request, function(response, status){
-    //   if (status == google.maps.DirectionsStatus.OK) {
-    //     directionsDisplay.setDirections(response);
-    //     console.log(status);
-    //     console.log(response);
-    //   }
-    // });
+    directionsService.route(request, function(response, status){
+      if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(response);
+        console.log(status);
+        console.log(response);
+      }
+    });
     drawPath(my_path);
   }
   // Adding geolocation function

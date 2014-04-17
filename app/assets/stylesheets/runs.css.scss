@@ -100,6 +100,16 @@ body {
   right: 10px;
 }
 
+#directionsPanel {
+  position: fixed;
+  right: 10px;
+  top: 250px;
+  width: 25%;
+  height: 63%;
+  z-index: 2;
+  overflow: auto;
+}
+
 .adp, .adp table, .adp-list, .adp-summary {
   color: white;
   background-color: rgba(127, 140, 141, 0.6);
@@ -275,6 +285,15 @@ body {
     top: 100px;
     right: 10px;
   }
+
+  #directionsPanel {
+    position: fixed;
+    right: 10px;
+    width: 40%;
+    height: 63%;
+    z-index: 2;
+    overflow: auto;
+  }
 }
 
 @media (max-width: 500px) {
@@ -316,6 +335,16 @@ body {
     height: 15%;
     top: 100px;
     right: 10px;
+  }
+
+  #directionsPanel {
+    position: fixed;
+    right: 10px;
+    top: 75%;
+    width: 80%;
+    height: 30%;
+    z-index: 2;
+    overflow: auto;
   }
 
   #user_username, #user_password, #user_password_confirmation {

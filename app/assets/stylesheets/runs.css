@@ -103,6 +103,16 @@ body {
   right: 10px;
 }
 
+#directionsPanel {
+  position: fixed;
+  z-index: 2;
+  width: 25%;
+  height: 63%;
+  top: 250px;
+  right: 10px;
+  overflow: auto;
+}
+
 .adp, .adp table, .adp-list, .adp-summary {
   color: white;
   background-color: rgba(127, 140, 141,0.6);
@@ -237,104 +247,106 @@ body {
   right: 25px;
 }
 
-
 }
-
 
 
 @media (max-width: 800px) {
 
-#panel {
-  position: fixed;
-  /*float: right;*/
-  /*top: 30px;*/
-  left: 50%;
-  margin-left: -150px;
-  z-index: 500;
-  background-color: #fff;
-  padding: 5px;
-}
+  #panel {
+    position: fixed;
+    left: 50%;
+    margin-left: -150px;
+    z-index: 500;
+    background-color: #fff;
+    padding: 5px;
+  }
 
-#start, #end {
-  width: 100px;
-}
+  #start, #end {
+    width: 100px;
+  }
 
-.navbar-text {
-  margin-top: 5px !important;
-  margin-bottom: 5px !important;
-}
+  .navbar-text {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
 
-.navbar-header, .navbar-right {
-  margin-right: 25px !important;
-  margin-top: 10px !important;
-}
+  .navbar-header, .navbar-right {
+    margin-right: 25px !important;
+    margin-top: 10px !important;
+  }
 
-#elevation_chart {
-  position: fixed;
-  z-index: 1;
-  width: 40%;
-  height: 20%;
-  top: 100px;
-  right: 10px;
-}
+  #elevation_chart {
+    position: fixed;
+    z-index: 1;
+    width: 40%;
+    height: 20%;
+    top: 100px;
+    right: 10px;
+  }
 
+  #directionsPanel {
+    position: fixed;
+    right: 10px;
+    width: 40%;
+    height: 63%;
+    z-index: 2;
+    overflow: auto;
+  }
 }
 
 @media (max-width: 500px) {
 
-#title {
-  font-size: 30px;
-}
+  #title {
+    font-size: 30px;
+  }
 
-/*#panel {
-  float: right;
-  top: 60px;
-  left: 50%;
-  margin-left: -130px;
-  z-index: 500;
-  background-color: #fff;
-  padding: 5px;
-}*/
+  #panel {
+    float: right;
+    top: 0px;
+    left: 70%;
+    margin-left: -130px;
+    z-index: 500;
+    background-color: rgba(0,0,0,0) !important;
+    padding: 5px;
+    width: 160px;
+    text-align: right;
+  }
 
-#panel {
-float: right;
-top: 0px;
-left: 70%;
-margin-left: -130px;
-z-index: 500;
-background-color: rgba(0,0,0,0) !important;
-padding: 5px;
-width: 160px;
-text-align: right;
-}
+  #start, #end {
+    width: 100px;
+  }
 
-#start, #end {
-  width: 100px;
-}
+  .navbar-text {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
 
-.navbar-text {
-  margin-top: 5px !important;
-  margin-bottom: 5px !important;
-}
+  .navbar-header, .navbar-right {
+    margin-right: 25px !important;
+    margin-top: 5px !important;
+  }
 
-.navbar-header, .navbar-right {
-  margin-right: 25px !important;
-  margin-top: 5px !important;
-}
+  #elevation_chart {
+    position: fixed;
+    z-index: 1;
+    width: 80%;
+    height: 15%;
+    top: 100px;
+    right: 10px;
+  }
 
-#elevation_chart {
-  position: fixed;
-  z-index: 1;
-  width: 80%;
-  height: 15%;
-  top: 100px;
-  right: 10px;
-}
+  #directionsPanel {
+    position: fixed;
+    right: 10px;
+    top: 75%;
+    width: 80%;
+    height: 30%;
+    z-index: 2;
+    overflow: auto;
+  }
 
-#user_username, #user_password, #user_password_confirmation {
-  width: 200px;
-
-}
-
+  #user_username, #user_password, #user_password_confirmation {
+    width: 200px;
+  }
 
 }
