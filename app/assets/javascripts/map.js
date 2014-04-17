@@ -220,8 +220,10 @@ function initialize(){
   // Adding geolocation function
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(function(position){
-      var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     });
+
+    var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    var position;
 
     var infowindow = new google.maps.InfoWindow({
       map: map,
