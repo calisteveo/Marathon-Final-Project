@@ -11,6 +11,8 @@ gem 'pry-rails', :group => :development
 
 gem 'pg'
 
+gem 'geocoder'
+
 # gem 'twitter-bootstrap-rails', '~> 2.2.8'
 
 gem 'handlebars_assets'

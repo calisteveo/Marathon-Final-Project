@@ -73,7 +73,7 @@ function initialize(){
   var banoRequest = {
     location: san_francisco,
     radius: '500',
-    types: ['restroom', 'coffee shop', 'drinking fountain']
+    types: ['restroom', 'coffee shop']
   };
 
   service = new google.maps.places.PlacesService(map);
@@ -218,21 +218,48 @@ function initialize(){
     drawPath(my_path);
   }
   // Adding geolocation function
-  if(navigator.geolocation){
-    navigator.geolocation.getCurrentPosition(function(position){
+  function showLocation(latLng) {
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({
+      "location": latLng
+    },
+    function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK)
+        document.getElementById("address").innerHTML = results[0].formatted_address;
+      else
+        document.getElementById("error").innerHTML += "Unable to retrieve your address" + "<br />";
     });
-
-    var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-    var position;
-
-    var infowindow = new google.maps.InfoWindow({
-      map: map,
-      position: pos,
-      content: 'Location found using HTML5.'
-    });
-    
   }
 
+  function geolocationSuccess(position) {
+    var userLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+    new google.maps.Marker({
+      map: map,
+      position: userLatLng
+    });
+  }
+
+  function geolocationError(positionError){
+    document.getElementById("error").innerHTML += "Error: " + positionError.message + "<br />";
+  }
+
+  function geolocateUser() {
+    if (navigator.geolocation)
+    {
+      var positionOptions = {
+        enableHighAccuracy: true,
+        timeout: 10 * 1000 //10 sec
+      };
+      navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, positionOptions);
+    }
+    else
+      document.getElementById("error").innerHTML += "Your browser doesn't support the Geolocation API";
+  }
+
+  window.onload = geolocateUser;
+
+  // Callback for the places service (bathrooms/coffeeshops)
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       for (var i = 0; i < results.length; i++) {

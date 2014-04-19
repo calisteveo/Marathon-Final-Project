@@ -6,7 +6,7 @@ class JourneysController < ApplicationController
 
   def create
     @list = []
-    new_journey = params.require(:journey)
+    new_journey = params.require(:journey).permit(:name, :origin, :orig_lat, :orig_lng, :destination, :dest_lat, :dest_lng, :user_id)
     signed_in? ? id = current_user.id : nil
     @journey = Journey.create(origin: new_journey["start"], destination: new_journey["end"], user_id: id)
 
