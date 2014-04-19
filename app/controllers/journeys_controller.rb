@@ -15,7 +15,7 @@ class JourneysController < ApplicationController
         Waypoint.create(way_lat: waypoint["d"], way_lng: waypoint["e"], journey_id: @journey.id)
       end
     end
-    redirect_to '/runit'
+    redirect_to '/'
   end
 
   def show

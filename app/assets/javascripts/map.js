@@ -76,8 +76,8 @@ function initialize(){
     types: ['restroom', 'coffee shop']
   };
 
-  service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(banoRequest, callback);
+  // service = new google.maps.places.PlacesService(map);
+  // service.nearbySearch(banoRequest, callback);
 }
 
   function calcRoute() {
